@@ -534,6 +534,9 @@ export async function getParticipant(
  * ============================================================
  *
  * Mengambil analisis statistik / agregat tim utama.
+ *
+ * Endpoint:
+ * admin_team_analysis
  */
 
 export async function getTeamAnalysis() {
@@ -555,9 +558,11 @@ export async function getTeamAnalysis() {
  *
  * Mengambil hasil AI Leadership Analysis.
  *
- * PENTING:
- * Endpoint AI sengaja dipisahkan dari
- * admin_team_analysis.
+ * Endpoint AI sengaja dipisahkan dari:
+ * admin_team_analysis
+ *
+ * Endpoint:
+ * admin_team_ai_analysis
  */
 
 export async function getTeamAIAnalysis() {
