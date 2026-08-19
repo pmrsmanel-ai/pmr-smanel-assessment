@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>PMR SMANEL Leadership Assessment</title>
+
+    <script>
+      (function () {
+        var redirect = window.location;
+
+        var pathSegmentsToKeep = 0;
+
+        var path = redirect.pathname
+          .split("/")
+          .filter(Boolean);
+
+        var repoPath = "";
+
+        if (
+          pathSegmentsToKeep > 0
+        ) {
+          repoPath =
+            "/" +
+            path
+              .slice(
+                0,
+                pathSegmentsToKeep
+              )
+              .join("/");
+        }
+
+        var route =
+          path
+            .slice(
+              pathSegmentsToKeep
+            )
+            .join("/");
+
+        var query =
+          redirect.search
+            ? redirect.search
+            : "";
+
+        var hash =
+          redirect.hash
+            ? redirect.hash
+            : "";
+
+        var target =
+          repoPath +
+          "/?p=/" +
+          encodeURIComponent(
+            route
+          ) +
+          "&q=" +
+          encodeURIComponent(
+            query
+          ) +
+          "&h=" +
+          encodeURIComponent(
+            hash
+          );
+
+        redirect.replace(
+          redirect.protocol +
+          "//" +
+          redirect.host +
+          target
+        );
+      })();
+    </script>
+  </head>
+
+  <body>
+    <p>
+      Mengarahkan ke aplikasi...
+    </p>
+  </body>
+</html>
